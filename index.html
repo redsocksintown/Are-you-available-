@@ -33,15 +33,19 @@
             gap: 20px;
         }
         button {
-            font-size: 1.5em;
-            padding: 10px 20px;
+            font-size: 2em;
+            padding: 15px 30px;
             border: none;
             background: pink;
             color: white;
-            border-radius: 10px;
+            border-radius: 15px;
             cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            transition: transform 0.2s ease-in-out;
+            box-shadow: 0 0 10px rgba(255, 105, 180, 0.8);
+            transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 105, 180, 1);
         }
         .yes-btn:hover {
             background: hotpink;
@@ -80,14 +84,15 @@
     </style>
 </head>
 <body>
-    <h1>Do you wanna be my Valentine 💖</h1>
+    <h1>Do you wanna be my Valentine? 💖</h1>
     <div class="button-container">
         <button class="yes-btn" onclick="fireworks()">Yes</button>
         <button class="no-btn" onclick="runAway()">No</button>
     </div>
 
     <audio autoplay loop>
-        <source src="https://youtu.be/OrDB4jpA1g8?si=x16lYWW7jikoaw7H" type="audio/mpeg">
+        <source src="https://www.dropbox.com/scl/fi/your-audio-file.mp3?rlkey=yourkey&dl=1" type="audio/mpeg">
+        Your browser does not support the audio element.
     </audio>
 
     <script>
