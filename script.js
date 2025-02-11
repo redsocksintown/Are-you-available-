@@ -33,3 +33,15 @@ button:hover {
     font-size: 18px;
     color: #333;
 }
+document.addEventListener("DOMContentLoaded", function () {
+    const yesButton = document.getElementById("yes-btn");
+    const noButton = document.getElementById("no-btn");
+
+    yesButton.addEventListener("click", function () {
+        noButton.style.opacity = "0";  // Làm mờ dần
+        setTimeout(() => {
+            noButton.style.display = "none"; // Ẩn hoàn toàn
+        }, 500); // Đợi 0.5s để hiệu ứng chạy
+    });
+});
+
