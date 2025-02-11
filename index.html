@@ -7,8 +7,8 @@
     <style>
         body {
             text-align: center;
-            font-family: Arial, sans-serif;
-            background: url('https://i.pinimg.com/originals/0d/6f/8e/0d6f8e8b3c4e2b6f52f71c6cf4c3f858.gif') no-repeat center center/cover;
+            font-family: Roboto, sans-serif;
+            background: url('https://imgflip.com/memegenerator/116623327/Tom-and-Jerry-Goons') no-repeat center center/cover;
             color: #CB322C;
             height: 100vh;
             display: flex;
@@ -22,6 +22,11 @@
             font-size: 2.5em;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
+        .button-container {
+            margin-top: 20px;
+            display: flex;
+            gap: 20px;
+        }
         button {
             font-size: 1.5em;
             padding: 10px 20px;
@@ -33,16 +38,16 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
             transition: transform 0.2s ease-in-out;
         }
-        button:hover {
-            animation: shake 0.5s ease-in-out infinite;
+        .yes-btn:hover {
             background: hotpink;
         }
-        @keyframes shake {
-            0% { transform: translateX(0); }
-            25% { transform: translateX(-5px); }
-            50% { transform: translateX(5px); }
-            75% { transform: translateX(-5px); }
-            100% { transform: translateX(0); }
+        .no-btn {
+            position: absolute;
+        }
+        .no-btn:hover {
+            position: absolute;
+            left: calc(10% + 80% * Math.random());
+            top: calc(10% + 80% * Math.random());
         }
         .star {
             position: absolute;
@@ -61,7 +66,10 @@
 </head>
 <body>
     <h1>Bé có muốn đi chơi Valentine với tớ không? 💖</h1>
-    <button onclick="alert('Yay! Hẹn hò thôi 💕')">Nhấn vào đây</button>
+    <div class="button-container">
+        <button class="yes-btn" onclick="alert('Yay! Đi chơi thôi!!!')">Yes</button>
+        <button class="no-btn" onclick="runAway()">No</button>
+    </div>
 
     <script>
         function createStars() {
@@ -75,6 +83,12 @@
             }
         }
         createStars();
+
+        function runAway() {
+            let noBtn = document.querySelector('.no-btn');
+            noBtn.style.left = Math.random() * 80 + "vw";
+            noBtn.style.top = Math.random() * 80 + "vh";
+        }
     </script>
 </body>
 </html>
